@@ -52,8 +52,6 @@ class HumbleRPiPluginLirc
     end
   end
   
-  alias on_start start
-  
   private
   
   def on_keypress(key)
