@@ -12,12 +12,13 @@ class HumbleRPiPluginLirc
     @notifier = variables[:notifier]
     @device_id = variables[:device_id] || 'pi'    
     @topic = settings[:topic] || @device_id + '/lirc'
+    @device = variables[:device] || '/var/run/lirc/lircd'
     
   end
   
   def start()
     
-    lirc = LIRC::Client.new
+    lirc = LIRC::Client.new  @device
     combi_keys = []
     combination_keys = false
 
